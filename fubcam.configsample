@@ -1,0 +1,6 @@
+host='aaa.com'
+user='bbb@aaa.com'
+passwd='1234'
+postpwd='1234'
+posturl='http://localhost:8888/up.php'
+scriptPath="$( cd "$(dirname "$0")" ; pwd -P )"
