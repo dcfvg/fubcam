@@ -10,10 +10,9 @@ dateH=$(date +"%Y.%m.%d_%H:%M:%S")
 mkdir $scriptPath/data
 
 # get current
-
 current=$scriptPath/data/$date.jpg
 
-fswebcam -r 1920x1080 --no-banner -D 3 -S 200 $current
+fswebcam -r 1920x1080 --no-banner -D 1 -S 150 $current
 jpegoptim $current
 
 # backup image online
@@ -23,7 +22,6 @@ jpegoptim $current
 #   $posturl
 
 # create live image
-
 live="$scriptPath/live-$(hostname).jpg"
 
 convert $current -resize 1280 \
