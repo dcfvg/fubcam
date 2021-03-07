@@ -1,1 +1,4 @@
 *.config
+data
+.DS_Store
+*.jpg

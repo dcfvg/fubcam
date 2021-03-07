@@ -2,6 +2,7 @@
 
 . fubcam.config
 
+start=`date +%s`
 date=$(date +"%Y-%m-%d_%H%M")
 dateH=$(date +"%Y.%m.%d_%H:%M")
 
@@ -12,10 +13,11 @@ current=$scriptPath/data/$date.jpg
 fswebcam -r 1920x1080 --no-banner -D 3 -S 100 $current
 jpegoptim $current
 
-curl \
-  -F "pwd="$postpwd \
-  -F "fileToUpload=@"$current \
-  $posturl
+# backup image online
+# curl \
+#   -F "pwd="$postpwd \
+#   -F "fileToUpload=@"$current \
+#   $posturl
 
 # create live image
 
@@ -34,3 +36,6 @@ curl \
   -F "fileToUpload=@"$live \
   -F "type=live" \
   $posturl
+
+end=`date +%s`
+echo Execution time was `expr $end - $start` seconds.
