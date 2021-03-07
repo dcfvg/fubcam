@@ -1,12 +1,12 @@
 #!/bin/bash
 
-. fubcam.config
+. $scriptPath/fubcam.config
 
 start=`date +%s`
 date=$(date +"%Y-%m-%d_%H%M-%S")
 dateH=$(date +"%Y.%m.%d_%H:%M:%S")
 
-mkdir data
+mkdir $scriptPath/data
 
 # get current
 
