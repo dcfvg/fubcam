@@ -3,15 +3,16 @@
 . fubcam.config
 
 start=`date +%s`
-date=$(date +"%Y-%m-%d_%H%M")
-dateH=$(date +"%Y.%m.%d_%H:%M")
+date=$(date +"%Y-%m-%d_%H%M-%S")
+dateH=$(date +"%Y.%m.%d_%H:%M:%S")
+
 mkdir data
 
 # get current
 
 current=$scriptPath/data/$date.jpg
 
-fswebcam -r 1920x1080 --no-banner -D 3 -S 100 $current
+fswebcam -r 1920x1080 --no-banner -D 3 -S 200 $current
 jpegoptim $current
 
 # backup image online
