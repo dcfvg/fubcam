@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. $scriptPath/fubcam.config
+scriptPath="/home/pi/fubcam/"
+. "$scriptPath/fubcam.config"
 
 start=`date +%s`
 date=$(date +"%Y-%m-%d_%H%M-%S")
