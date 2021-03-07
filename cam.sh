@@ -25,10 +25,10 @@ jpegoptim $current
 live="$scriptPath/live-$(hostname).jpg"
 
 convert $current -resize 1280 \
-  -set colorspace Gray -separate -average \
   -background white label:$dateH \
   -bordercolor white -border 8x4 \
   -gravity Center -append $live
+# -set colorspace Gray -separate -average \
 
 jpegoptim $live
 
