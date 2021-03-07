@@ -5,6 +5,7 @@
 start=`date +%s`
 date=$(date +"%Y-%m-%d_%H%M")
 dateH=$(date +"%Y.%m.%d_%H:%M")
+mkdir data
 
 # get current
 
@@ -21,7 +22,7 @@ jpegoptim $current
 
 # create live image
 
-live=$scriptPath/live.jpg
+live="$scriptPath/live-$(hostname).jpg"
 
 convert $current -resize 1280 \
   -set colorspace Gray -separate -average \
